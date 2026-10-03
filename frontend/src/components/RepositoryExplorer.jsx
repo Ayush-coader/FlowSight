@@ -221,7 +221,7 @@ export default function RepositoryExplorer({
   };
 
   return (
-    <aside className="w-64 h-full bg-[#0b0f19] border-r border-slate-800/80 flex flex-col z-20 shrink-0 select-none">
+    <aside className="w-72 sm:w-80 max-w-[85vw] h-full bg-[#0b0f19] border-r border-slate-800/80 flex flex-col z-20 shrink-0 select-none safe-pb">
       {/* Header */}
       <div className="p-3 border-b border-slate-800/80 flex items-center justify-between">
         <div className="flex items-center gap-2">

@@ -118,45 +118,46 @@ export default function ReadmeModal({
       <div className="bg-[#0b101e] border border-sky-500/30 rounded-2xl w-full max-w-5xl h-[92vh] flex flex-col shadow-2xl overflow-hidden">
         
         {/* Top Header */}
-        <div className="p-4 sm:p-5 border-b border-slate-800 bg-[#070a12]/95 flex items-center justify-between gap-4 shrink-0">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 border border-sky-400/30 text-sky-400 shadow-md">
-              <BookOpen size={22} />
+        <div className="p-3.5 sm:p-5 border-b border-slate-800 bg-[#070a12]/95 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="p-2 sm:p-2.5 rounded-xl bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 border border-sky-400/30 text-sky-400 shadow-md shrink-0">
+              <BookOpen size={20} />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h2 className="text-base sm:text-lg font-bold text-slate-100">
-                  Project README & Plain English Guide
+            <div className="min-w-0">
+              <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                <h2 className="text-sm sm:text-base md:text-lg font-bold text-slate-100 truncate">
+                  Project README & Guide
                 </h2>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">
+                <span className="text-[9px] sm:text-[10px] font-semibold px-2 py-0.2 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20 font-mono truncate max-w-[120px] sm:max-w-[180px]">
                   {repoName}
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
-                Everything in the repo explained in simple words: structure, how to use, tech stack, and data journeys
+              <p className="text-[11px] sm:text-xs text-slate-400 line-clamp-1">
+                Plain English architecture, structure, how to use, and data flow journeys
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2">
             {/* Quick Copy Button */}
             <button
               onClick={handleCopy}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${
+              className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${
                 copied
                   ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
                   : 'bg-slate-900 text-slate-300 hover:text-slate-100 hover:bg-slate-800 border-slate-800'
               }`}
               title="Copy complete Markdown to clipboard"
             >
-              {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
-              <span>{copied ? 'Copied!' : 'Copy Markdown'}</span>
+              {copied ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
+              <span className="hidden sm:inline">{copied ? 'Copied!' : 'Copy Markdown'}</span>
+              <span className="sm:hidden">{copied ? 'Copied' : 'Copy'}</span>
             </button>
 
             {/* Download Markdown (.md) Secondary Button */}
             <button
               onClick={handleDownloadMd}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-slate-100 border border-slate-800 text-xs font-semibold transition-all cursor-pointer"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-slate-100 border border-slate-800 text-xs font-semibold transition-all cursor-pointer"
               title="Download as GitHub README.md"
             >
               <FileText size={13} />
@@ -166,17 +167,19 @@ export default function ReadmeModal({
             {/* PRIMARY: Download Interactive Guide (.html) */}
             <button
               onClick={handleDownloadInteractiveGuide}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 hover:from-sky-400 hover:to-indigo-400 text-slate-950 font-bold text-xs shadow-lg shadow-sky-500/25 transition-all cursor-pointer"
+              className="flex items-center gap-1 sm:gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 hover:from-sky-400 hover:to-indigo-400 text-slate-950 font-bold text-xs shadow-lg shadow-sky-500/25 transition-all cursor-pointer"
               title="Download standalone, offline-ready Interactive Guide"
             >
-              <Download size={14} />
-              <span>Download Interactive Guide</span>
+              <Download size={13} />
+              <span className="hidden sm:inline">Download Guide</span>
+              <span className="sm:hidden">Download</span>
             </button>
 
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="p-1.5 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-slate-100 transition-colors cursor-pointer ml-1"
+              className="p-1.5 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-slate-100 transition-colors cursor-pointer"
+              title="Close modal"
             >
               <X size={18} />
             </button>

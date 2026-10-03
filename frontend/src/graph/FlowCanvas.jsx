@@ -605,14 +605,14 @@ function FlowCanvasInner({
       )}
 
       {/* Top-Right Compact Floating Canvas Controls */}
-      <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 p-1 rounded-xl bg-[#0f172a]/95 border border-slate-800 text-xs text-slate-300 backdrop-blur-xl shadow-xl">
+      <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-20 flex items-center gap-1 sm:gap-1.5 p-1 rounded-xl bg-[#0f172a]/95 border border-slate-800 text-xs text-slate-300 backdrop-blur-xl shadow-xl">
         <button
           onClick={() => setDirection((d) => (d === 'TB' ? 'LR' : 'TB'))}
-          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-sky-400 transition-colors cursor-pointer"
+          className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-sky-400 transition-colors cursor-pointer"
           title="Toggle Layout Direction (Top-Bottom vs Left-Right)"
         >
           {direction === 'TB' ? <ArrowDownUp size={13} /> : <ArrowLeftRight size={13} />}
-          <span className="text-[11px] font-mono font-semibold">{direction === 'TB' ? 'Vertical (TB)' : 'Horizontal (LR)'}</span>
+          <span className="hidden sm:inline text-[11px] font-mono font-semibold">{direction === 'TB' ? 'Vertical (TB)' : 'Horizontal (LR)'}</span>
         </button>
 
         <div className="h-4 w-px bg-slate-800" />

@@ -317,25 +317,25 @@ export default function AIChatDrawer({ graphData, selectedNode, onSelectNode }) 
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-5 right-5 z-40 flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 hover:from-sky-400 hover:to-purple-500 text-white font-bold text-xs shadow-2xl shadow-sky-500/30 ring-2 ring-sky-300/40 hover:scale-105 transition-all cursor-pointer group"
+          className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-40 flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 hover:from-sky-400 hover:to-purple-500 text-white font-bold text-xs shadow-2xl shadow-sky-500/30 ring-2 ring-sky-300/40 hover:scale-105 transition-all cursor-pointer group safe-pb"
           title="Open FlowSight AI Assistant"
         >
           <div className="relative flex items-center justify-center">
-            <Bot size={17} />
+            <Bot size={16} />
             <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
           </div>
           <span className="tracking-wide">AI Assistant</span>
-          <Sparkles size={14} className="text-amber-300" />
+          <Sparkles size={13} className="text-amber-300" />
         </button>
       )}
 
       {/* Floating Chat Drawer */}
       {isOpen && (
         <div
-          className={`fixed bottom-5 right-5 z-50 flex flex-col bg-[#0b0f19]/95 border border-sky-500/30 rounded-2xl shadow-2xl shadow-sky-950/60 backdrop-blur-2xl transition-all duration-300 overflow-hidden ${
+          className={`fixed inset-x-2 bottom-2 top-14 sm:top-auto sm:inset-x-auto sm:bottom-5 sm:right-5 z-50 flex flex-col bg-[#0b0f19]/95 border border-sky-500/30 rounded-2xl shadow-2xl shadow-sky-950/60 backdrop-blur-2xl transition-all duration-300 overflow-hidden ${
             isExpanded
-              ? 'w-[94vw] sm:w-[580px] h-[86vh]'
-              : 'w-[94vw] sm:w-[460px] h-[560px]'
+              ? 'sm:w-[580px] md:w-[640px] sm:h-[86vh]'
+              : 'sm:w-[440px] md:w-[480px] sm:h-[560px]'
           }`}
         >
           {/* Header */}

@@ -14,7 +14,17 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
+}
+
+/* Safe area support for notch & home bar devices */
+.safe-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-pt {
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 /* Custom scrollbar */

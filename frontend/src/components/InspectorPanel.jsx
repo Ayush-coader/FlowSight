@@ -224,9 +224,9 @@ export default function InspectorPanel({
   ];
 
   return (
-    <div className="w-80 md:w-96 lg:w-[430px] h-full bg-[#0b0f19] border-l border-slate-800 flex flex-col z-20 shadow-2xl overflow-hidden select-none">
+    <div className="w-full sm:w-96 md:w-[420px] lg:w-[440px] max-w-[100vw] h-full bg-[#0b0f19] border-l border-slate-800 flex flex-col z-20 shadow-2xl overflow-hidden select-none safe-pb">
       {/* Inspector Top Header */}
-      <div className="p-3.5 border-b border-slate-800 bg-[#070a12]/80 flex items-center justify-between shrink-0">
+      <div className="p-3 sm:p-3.5 border-b border-slate-800 bg-[#070a12]/80 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2 overflow-hidden">
           <div className="p-1.5 rounded-xl bg-sky-500/10 border border-sky-500/30 text-sky-400">
             <Activity size={16} />
